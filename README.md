@@ -202,7 +202,7 @@ AI-Resume-Screening-System/
 ## How to Run Locally
 
 ### 1. Clone the repository
-git clone https://github.com/Harshitha070705/AI-Resume-Screening-System.git
+git clone https://github.com/shruthi-924/AI-resume-screening-and-job-recommendation-system
 cd AI-Resume-Screening-System
 
 ### 2. Create and activate a virtual environment
