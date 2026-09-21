@@ -70,8 +70,9 @@ Each recommendation includes:
 ## Demo
 
 ### Home Page
+<img width="1887" height="965" alt="Screenshot 2026-09-09 213326" src="https://github.com/user-attachments/assets/6bae0e80-3827-4268-9988-e4f737f84dc2" />
 
-![Home Page](screenshots/Home.png)
+
 
 ### Resume Upload
 
