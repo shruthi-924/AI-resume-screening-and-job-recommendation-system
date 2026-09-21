@@ -1,164 +1,172 @@
-# AI Resume Screening & Job Recommendation System
+# AI-Based Resume Screening & Job Recommendation System
 
-An intelligent web-based application designed to simplify the resume screening and job-search process. The system analyzes a candidate's resume, compares it with a given job description, calculates a compatibility score, highlights relevant and missing skills, and suggests suitable job roles.
+An AI-powered web application that analyzes resumes against job descriptions, calculates a resume-job match score, identifies matched and missing skills, and recommends suitable job roles based on the skills detected in the resume.
 
-The project combines **Python, Natural Language Processing (NLP), Machine Learning, and Flask** to build an automated resume analysis and recommendation platform.
-
----
-
-## About the Project
-
-Manually reviewing a large number of resumes can be time-consuming for recruiters and job seekers. This project aims to reduce that effort by automatically analyzing resume content and comparing it with job requirements.
-
-Users can upload their resume and provide a job description to get useful insights such as:
-
-* Resume-job compatibility score
-* Skills that match the job requirements
-* Skills that are missing
-* Recommended job positions
-* Relevant job details based on the candidate's profile
+The project combines **Natural Language Processing (NLP)**, **Machine Learning**, and **Flask web development** to demonstrate how an intelligent resume screening system can assist candidates and recruiters.
 
 ---
 
-## Main Features
+## Project Overview
 
-### Resume Analysis
+Recruiters often spend significant time manually reviewing resumes and comparing candidate skills with job requirements.
 
-* Supports **PDF and DOCX resumes**
-* Extracts text automatically from uploaded files
-* Cleans and preprocesses the extracted content
-* Identifies important skills and keywords
+This project demonstrates how **Artificial Intelligence and Natural Language Processing** can be used to automate part of this process.
 
-### Job Matching
+The system allows a user to:
 
-* Compares resume content with job requirements
-* Converts text into numerical features using **TF-IDF**
-* Calculates similarity using **Cosine Similarity**
-* Produces a percentage-based compatibility score
-
-### Skill Gap Identification
-
-The application compares the skills found in the resume with the skills mentioned in the job description and displays:
-
-* Commonly matched skills
-* Skills that are required but not found in the resume
-
-### Career Recommendations
-
-Based on the skills extracted from the resume, the application searches the available job dataset and recommends relevant roles.
-
-The recommendations provide information such as:
-
-* Recommended job title
-* Matching score
-* Relevant skills
-* Job description
+- Upload a resume in PDF or DOCX format
+- Enter a job description
+- Analyze the compatibility between the resume and the job description
+- View a match percentage
+- See matched and missing skills
+- Receive job recommendations based on the skills detected in the resume
 
 ---
 
-## Match Score Classification
+## Key Features
 
-|         Score | Result        |
-| ------------: | ------------- |
-| 85% and above | Great Match   |
-|     70% – 84% | Good Match    |
-|     40% – 69% | Average Match |
-|     Below 40% | Low Match     |
+### Resume Screening
+
+- Upload resumes in **PDF or DOCX format**
+- Extract resume text automatically
+- Preprocess text using NLP techniques
+- Compare resume content with a job description
+
+### Match Analysis
+
+- Calculate resume-job similarity
+- Use **TF-IDF vectorization**
+- Use **Cosine Similarity**
+- Generate an overall match percentage
+- Categorize the result as:
+
+| Match Score | Category |
+|-------------|----------|
+| ≥ 85% | Great Match |
+| ≥ 70% | Good Match |
+| ≥ 40% | Average Match |
+| < 40% | Poor Match |
+
+### Skill Analysis
+
+The system identifies:
+
+- Skills present in both the resume and job description
+- Skills required by the job but missing from the resume
+
+### Job Recommendations
+
+The system analyzes the skills detected in the resume and recommends suitable roles from a predefined job dataset.
+
+Each recommendation includes:
+
+- Job title
+- Match percentage
+- Job description
+- Matching skills
 
 ---
 
-## Application Screenshots
+## Demo
 
-### Dashboard
+### Home Page
 
-![Dashboard](screenshots/Home.png)
+![Home Page](screenshots/Home.png)
 
-### Resume Submission
+### Resume Upload
 
 ![Resume Upload](screenshots/ResumeUpload.png)
 
-### Analysis Results
+### Result & Job Recommendations
 
-![Results](screenshots/Result.png)
-
----
-
-## Technologies Used
-
-| Category               | Technologies      |
-| ---------------------- | ----------------- |
-| Language               | Python            |
-| Web Framework          | Flask             |
-| NLP                    | NLTK              |
-| Machine Learning       | Scikit-learn      |
-| Text Representation    | TF-IDF            |
-| Similarity Calculation | Cosine Similarity |
-| Numerical Processing   | NumPy             |
-| PDF Processing         | PyPDF2            |
-| DOCX Processing        | python-docx       |
-| Frontend               | HTML, CSS, Jinja2 |
-| Dataset                | CSV               |
+![Result](screenshots/Result.png)
 
 ---
 
-## System Workflow
+## Tech Stack
+
+### Programming Language
+
+- Python
+
+### Backend
+
+- Flask
+
+### Machine Learning & NLP
+
+- NLTK
+- Scikit-learn
+- TF-IDF
+- Cosine Similarity
+- NumPy
+
+### Document Processing
+
+- PyPDF2
+- python-docx
+
+### Frontend
+
+- HTML
+- CSS
+- Jinja2 Templates
+
+### Data
+
+- CSV-based job dataset
+
+---
+
+## How the System Works
 
 ```text
-             User Input
-                 |
-        +--------+--------+
-        |                 |
-      Resume        Job Description
-        |                 |
-        v                 v
-   Text Extraction    Text Processing
-        |                 |
-        +--------+--------+
-                 |
-                 v
-          NLP Preprocessing
-                 |
-                 v
-          Skill Identification
-                 |
-                 v
-          TF-IDF Processing
-                 |
-                 v
-        Cosine Similarity
-                 |
-                 v
-          Match Score
-                 |
-        +--------+---------+
-        |                  |
-        v                  v
-   Skill Analysis    Job Recommendation
-        |                  |
-        +--------+---------+
-                 |
-                 v
-           Final Results
+
+        Resume + Job Description
+                   |
+                   v
+         Resume Text Extraction
+                   |
+                   v
+           Text Preprocessing
+                   |
+                   v
+            Skill Detection
+                   |
+                   v
+           TF-IDF Vectorization
+                   |
+                   v
+            Cosine Similarity
+                   |
+                   v
+            Match Percentage
+                   |
+          +--------------------+
+          |                    |
+          v                    v
+ Skill Gap Analysis    Job Recommendations
+          |                    |
+          +---------+----------+
+                    |
+                    v
+              Web Interface
 ```
 
----
-
-## Workflow Explanation
+## Processing Pipeline
 
 1. The user uploads a resume in PDF or DOCX format.
-2. The application extracts the textual content from the resume.
-3. The extracted content is cleaned using basic NLP preprocessing.
-4. Important skills are identified from both the resume and job description.
-5. TF-IDF is applied to represent the text numerically.
-6. Cosine Similarity measures the similarity between the two documents.
-7. A match percentage is generated based on the similarity score.
-8. The system identifies matched and missing skills.
-9. Resume skills are compared with the available job dataset.
-10. Relevant job roles are displayed to the user.
+2. Resume text is extracted from the uploaded document.
+3. NLP preprocessing is performed on the extracted text.
+4. Skills are detected from the resume and job description.
+5. Resume and job description text are converted into numerical representations using TF-IDF.
+6. Cosine similarity is used to calculate text similarity.
+7. The system generates an overall match score.
+8. The candidate is categorized based on the match percentage.
+9. Matched and missing skills are displayed.
+10. The detected resume skills are used to recommend suitable job roles.
 
----
-
-## Directory Structure
+## Project Structure
 
 ```text
 AI-Resume-Screening-System/
@@ -167,5 +175,73 @@ AI-Resume-Screening-System/
 ├── matcher.py
 ├── resume_parser.py
 ├── jobs.csv
-├── req
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   └── style.css
+│
+├── screenshots/
+│   ├── Home.png
+│   ├── ResumeUpload.png
+│   └── Result.png
+│
+└── sample_resumes/
+    ├── SampleResume.pdf
+    └── SampleJobDescription.docx
 ```
+## How to Run Locally
+
+### 1. Clone the repository
+git clone https://github.com/Harshitha070705/AI-Resume-Screening-System.git
+cd AI-Resume-Screening-System
+
+### 2. Create and activate a virtual environment
+python -m venv .venv
+Windows PowerShell:
+.venv\Scripts\Activate.ps1
+
+### 3. Install dependencies
+pip install -r requirements.txt
+
+### 4. Run the application
+python app.py
+
+### 5. Open the application
+
+Once the Flask server is running, open the following address in your browser:
+```text
+http://127.0.0.1:5000
+```
+
+### Limitations
+
+- Matching is primarily based on textual similarity and predefined skill detection
+- The system does not perform deep semantic understanding of candidate experience
+- Skills that are implied but not explicitly mentioned may not be detected
+- Results can vary depending on resume formatting and wording
+- Job recommendations are generated from a predefined job dataset
+
+### Future Improvements
+
+- Advanced semantic matching using BERT or transformer-based models
+- Resume ranking for multiple candidates
+- More sophisticated skill extraction
+- Database integration
+- Authentication and user profiles
+- Cloud deployment
+- Larger and dynamically updated job datasets
+
+### What I Learned
+
+- Resume text extraction from PDF and DOCX files
+- NLP preprocessing using NLTK
+- Skill extraction and matching
+- TF-IDF feature extraction
+- Cosine similarity
+- Flask backend development
+- Frontend-backend integration
