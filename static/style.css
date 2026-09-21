@@ -1,0 +1,609 @@
+/* =========================================================
+   AI RESUME SCREENING & JOB RECOMMENDATION SYSTEM
+   FINAL UI
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 50px 25px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #eef2ff;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.18), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.16), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.10), transparent 35%),
+        #070b18;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+
+    padding: 42px;
+
+    background: rgba(15, 23, 42, 0.88);
+    border: 1px solid rgba(129, 140, 248, 0.25);
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 60px rgba(99, 102, 241, 0.08);
+
+    backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+h1 {
+    margin: 0;
+    text-align: center;
+
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    background: linear-gradient(
+        90deg,
+        #c4b5fd,
+        #818cf8,
+        #38bdf8
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    margin: 14px auto 38px;
+
+    max-width: 600px;
+
+    text-align: center;
+    color: #94a3b8;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.label {
+    display: block;
+
+    margin-top: 24px;
+    margin-bottom: 9px;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+
+/* File Upload */
+
+input[type="file"] {
+    width: 100%;
+
+    padding: 14px;
+
+    color: #cbd5e1;
+
+    background: #0b1120;
+
+    border: 1px dashed #6366f1;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #a78bfa;
+    background: #10172a;
+}
+
+
+/* Textarea */
+
+textarea {
+    width: 100%;
+    min-height: 190px;
+
+    padding: 16px;
+
+    resize: vertical;
+
+    color: #e2e8f0;
+    background: #080d1c;
+
+    border: 1px solid #263354;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+textarea::placeholder {
+    color: #64748b;
+}
+
+textarea:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12),
+        0 0 25px rgba(99, 102, 241, 0.08);
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+   ========================================================= */
+
+button {
+    width: 100%;
+
+    margin-top: 25px;
+    padding: 15px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6
+    );
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 14px 30px rgba(99, 102, 241, 0.35);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESUME ANALYSIS
+   ========================================================= */
+
+.result {
+    margin-top: 35px;
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 75, 0.85),
+            rgba(15, 23, 42, 0.9)
+        );
+
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 18px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.result h2 {
+    margin-top: 0;
+
+    text-align: center;
+
+    color: #f1f5f9;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.score {
+    width: 125px;
+    height: 125px;
+
+    margin: 25px auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #111827 58%,
+            transparent 60%
+        );
+
+    border: 4px solid #6366f1;
+
+    color: #a78bfa;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    box-shadow:
+        0 0 30px rgba(99, 102, 241, 0.18);
+}
+
+.category {
+    text-align: center;
+
+    margin: 5px 0 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* Match Categories */
+
+.great {
+    color: #34d399;
+}
+
+.good {
+    color: #4ade80;
+}
+
+.average {
+    color: #fbbf24;
+}
+
+.poor {
+    color: #fb7185;
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills-section {
+    margin-top: 28px;
+}
+
+.skills-section h3 {
+    margin-bottom: 12px;
+
+    padding-bottom: 9px;
+
+    border-bottom: 1px solid #263354;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    padding: 9px 12px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    transition: transform 0.2s ease;
+}
+
+.skill-list li:hover {
+    transform: translateX(3px);
+}
+
+
+/* Matched */
+
+.matched li {
+    color: #6ee7b7;
+
+    background: rgba(16, 185, 129, 0.08);
+
+    border: 1px solid rgba(16, 185, 129, 0.18);
+}
+
+
+/* Missing */
+
+.missing li {
+    color: #fda4af;
+
+    background: rgba(244, 63, 94, 0.07);
+
+    border: 1px solid rgba(244, 63, 94, 0.18);
+}
+
+
+/* =========================================================
+   JOB RECOMMENDATIONS
+   ========================================================= */
+
+.recommendations {
+    margin-top: 50px;
+}
+
+.recommendations h2 {
+    margin-bottom: 7px;
+
+    text-align: center;
+
+    color: #f8fafc;
+
+    font-size: 25px;
+}
+
+.recommendation-subtitle {
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   JOB CARD
+   ========================================================= */
+
+.job-card {
+    position: relative;
+
+    margin-bottom: 16px;
+    padding: 22px 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.8),
+            rgba(15, 23, 42, 0.9)
+        );
+
+    border: 1px solid #263354;
+    border-left: 4px solid #6366f1;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(129, 140, 248, 0.5);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.28),
+        0 0 25px rgba(99, 102, 241, 0.07);
+}
+
+
+.job-card h3 {
+    margin: 0 0 8px;
+
+    color: #f1f5f9;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* Job Match Score */
+
+.job-score {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 5px 10px;
+
+    border-radius: 7px;
+
+    background: rgba(99, 102, 241, 0.12);
+
+    color: #a78bfa;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* Job Description */
+
+.job-card p {
+    margin: 8px 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   JOB SKILLS
+   ========================================================= */
+
+.job-skills {
+    margin-top: 16px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+.job-skills strong {
+    margin-right: 7px;
+
+    color: #cbd5e1;
+}
+
+
+/* Skill Pills */
+
+.matched-skill {
+    display: inline-block;
+
+    margin: 4px 4px 0 0;
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: rgba(16, 185, 129, 0.09);
+
+    border: 1px solid rgba(16, 185, 129, 0.2);
+
+    color: #6ee7b7;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .container {
+        padding: 25px 20px;
+
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .result {
+        padding: 22px;
+    }
+
+    .skill-list {
+        grid-template-columns: 1fr;
+    }
+
+    .job-card {
+        padding: 18px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .score {
+        width: 105px;
+        height: 105px;
+
+        font-size: 23px;
+    }
+
+    .recommendations h2 {
+        font-size: 21px;
+    }
+}
