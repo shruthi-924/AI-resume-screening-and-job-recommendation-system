@@ -70,17 +70,21 @@ Each recommendation includes:
 ## Demo
 
 ### Home Page
-<img width="1887" height="965" alt="Screenshot 2026-09-09 213326" src="https://github.com/user-attachments/assets/6bae0e80-3827-4268-9988-e4f737f84dc2" />
+<img width="1885" height="880" alt="HomePage" src="https://github.com/user-attachments/assets/988d3fbb-6353-4596-afef-40fbbda4e70b" />
+
 
 
 
 ### Resume Upload
 
-![Resume Upload](screenshots/ResumeUpload.png)
+<img width="1887" height="965" alt="Screenshot 2026-09-09 213326" src="https://github.com/user-attachments/assets/8f14a0ce-1414-4a91-9551-4af41cb79ce3" />
+
 
 ### Result & Job Recommendations
 
-![Result](screenshots/Result.png)
+<img width="1881" height="890" alt="Screenshot 2026-09-09 213401" src="https://github.com/user-attachments/assets/e2b417da-68bf-4752-8dd9-192c1ae804f8" />
+<img width="1892" height="897" alt="Screenshot 2026-09-09 213442" src="https://github.com/user-attachments/assets/674e3d29-8670-4973-8ec7-7d8e0a36e801" />
+
 
 ---
 
